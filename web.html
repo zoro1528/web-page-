@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #BEA97D, #355E3B);
+            color: white;
+            padding: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 50px;
+            border-radius: 20px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .btn {
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .yes {
+            background: #355E3B;
+            color: white;
+            animation: heartbeat 1.5s infinite;
+        }
+        .no {
+            background: #BEA97D;
+            color: white;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .panda {
+            display: none;
+            margin-top: 20px;
+            animation: kiss 1.5s infinite alternate;
+        }
+        @keyframes kiss {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ammuuuzeeeeeeeeeee ❤️</h1>
+        <p>I see forever in your eyes, just like the stars in the endless sky. With every smile mesmerizing your face, so here I stand, no need to guess... Will you be mine? Mine forever? For eternal? 💖</p>
+        <button class="btn yes" id="yes" onclick="showPanda()">Yes</button>
+        <button class="btn no" id="no" onclick="shrinkNo()">No</button>
+        <div class="panda" id="panda">
+            <img src="https://media.tenor.com/Y5I3S5X40K8AAAAi/panda-kiss.gif" alt="Panda Kiss" width="200">
+            <p>nee yes parayumm enik ariyayirunuuu😂😂</p>
+        </div>
+    </div>
+
+    <script>
+        function shrinkNo() {
+            let yesBtn = document.getElementById('yes');
+            let noBtn = document.getElementById('no');
+            yesBtn.style.fontSize = (parseInt(window.getComputedStyle(yesBtn).fontSize) + 5) + 'px';
+            yesBtn.style.padding = (parseInt(window.getComputedStyle(yesBtn).padding) + 5) + 'px';
+            noBtn.style.fontSize = (parseInt(window.getComputedStyle(noBtn).fontSize) - 2) + 'px';
+            noBtn.style.padding = (parseInt(window.getComputedStyle(noBtn).padding) - 2) + 'px';
+        }
+        function showPanda() {
+            document.getElementById('panda').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
